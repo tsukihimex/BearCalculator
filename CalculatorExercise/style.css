@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0%;
+    background-color: #50331b;
+    
+}
+
+.calculator {
+    display: grid;
+
+    /* 4 Spalten mit 60px Breite */
+    grid-template-columns: repeat(4, 60px);
+    background-color: #876B52;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.display {
+    grid-column: 1 / -1; /* Display geht über alle 4 Spalten */
+    background-color: #E6E0D0;
+    padding: 15px;
+    font-size: 40px;
+    text-align: right;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #6F4E33;
+}
+
+.delete {
+    /* Streckt den Button über alle 4 Spalten der Grid-Struktur */
+    grid-column: 1 / -1; 
+    
+    /* Optional: Eine auffällige Farbe für die Löschen-Taste */
+    background-color: #9F8872; 
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    padding: 15px;
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #E6E0D0;
+    border-color: #B6A691;
+    border-radius: 30px;
+    color: #6F4E33;
+    
+}
+
+button:active {
+    background-color: #CEC3B1;
+    transform: scale(0.95);
+}
+
+
+button:focus {
+    /* Entfernt den blauen Standard-Rahmen mancher Browser */
+    outline: none; 
+}
+
+.equal {
+    grid-column: span 2;
+}
