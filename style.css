@@ -3,70 +3,139 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0%;
+    margin: 0;
     background-color: #50331b;
-    
+
+    background-image: url("bodybackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Bears sitting on top */
+.bears {
+    position: absolute;
+    width: 305px;
+    top: -105px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Calculator body */
 .calculator {
     display: grid;
-
-    /* 4 Spalten mit 60px Breite */
     grid-template-columns: repeat(4, 60px);
-    background-color: #876B52;
     gap: 10px;
     padding: 20px;
+    background-color: #644b34;
     border-radius: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
+/* Display */
 .display {
-    grid-column: 1 / -1; /* Display geht über alle 4 Spalten */
-    background-color: #E6E0D0;
+    grid-column: 1 / -1;
+    background-color: hsl(45, 78%, 91%);
     padding: 15px;
-    font-size: 40px;
-    text-align: right;
     margin-bottom: 10px;
     border-radius: 10px;
+    font-size: 40px;
+    text-align: right;
     color: #6F4E33;
 }
 
-.delete {
-    /* Streckt den Button über alle 4 Spalten der Grid-Struktur */
-    grid-column: 1 / -1; 
-    
-    /* Optional: Eine auffällige Farbe für die Löschen-Taste */
-    background-color: #9F8872; 
-    color: white;
-    font-weight: bold;
-}
-
+/* All buttons */
 button {
-    padding: 15px;
-    font-size: 25px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
+    height: 60px;
+    padding: 0;
     cursor: pointer;
-    background-color: #E6E0D0;
-    border-color: #B6A691;
+    border: 2px solid #6F4E33;
     border-radius: 30px;
-    color: #6F4E33;
-    
+    background-color: #E6E0D0;
+
+    /* Hide normal text because we use images */
+    color: transparent;
+    font-size: 0;
+
+    /* Image settings */
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/* Click effect */
 button:active {
-    background-color: #CEC3B1;
     transform: scale(0.95);
 }
 
-
 button:focus {
-    /* Entfernt den blauen Standard-Rahmen mancher Browser */
-    outline: none; 
+    outline: none;
+}
+
+/* Special sizes */
+.delete {
+    grid-column: 1 / -1;
 }
 
 .equal {
     grid-column: span 2;
+}
+
+
+/* Number buttons */
+.bear0 { background-image: url("0."); }
+.bear1 { background-image: url("1.png"); }
+.bear2 { background-image: url("2.png"); }
+.bear3 { background-image: url("3.png"); }
+.bear4 { background-image: url("4.png"); }
+.bear5 { background-image: url("5.png"); }
+.bear6 { background-image: url("6.png"); }
+.bear7 { background-image: url("7.png"); }
+.bear8 { background-image: url("8.png"); }
+.bear9 { background-image: url("9.png"); }
+
+
+/* Operators */
+.bearminus { background-image: url("minus.png"); }
+.bearplus { background-image: url("plus.png"); }
+.beardivide { background-image: url("divide.png"); }
+.bearmulti { background-image: url("mult.png"); }
+
+/* Default image size for normal buttons */
+.bear0,
+.bear1,
+.bear2,
+.bear3,
+.bear4,
+.bear5,
+.bear6,
+.bear7,
+.bear8,
+.bear9,
+.bearminus,
+.bearplus,
+.beardivide,
+.bearmulti {
+    background-size: 120%;
+}
+
+/* DELETE button image */
+.bearDelete {
+    background-image: url("delete.png");
+    background-size: 120%;
+}
+
+/* EQUAL button image */
+.bearEqual {
+    background-image: url("equal.png");
+    background-size: 140%;
 }
